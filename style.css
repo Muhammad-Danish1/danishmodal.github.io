@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* *******************hero section************** */
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero::before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5,4,46,0.7)), url(./Images/back.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner {
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #fff;
+    z-index: 5;
+}
+.banner h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.btn {
+    font-size: 1rem;
+    font-weight: 500;
+    border-color: #090909;
+    border-radius: 9px;
+    padding: .4rem .9rem;
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    transition: .3s linear;
+}
+.btn:hover {
+    background: aquamarine;
+    transition: .3s linear;
+}
+
+
+/* ******************Overlay section************************* */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(73, 166, 233, 0.5);
+    z-index: 6;
+    transition: .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: -10;
+    visibility: hidden;
+    transition: .3s ease-in-out;
+}
+.show {
+    z-index: 10;
+    visibility: visible;
+    transition: .3s ease-in-out;
+}
+.modal-container {
+    width: 350px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+}
+.modal-container h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.modal-container .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background: #fff;
+}
+.modal-container .close-btn i {
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: red;
+    transition: .3s linear ;
+}
+.modal-container .close-btn i:hover{
+    transform: rotate(400deg);
+    transition: .3s;
+}
+
+
+/*************** media quaries section ****************/
+@media (max-width: 450px) {
+    .banner {
+        width: 70%;
+        height: 150px;
+    }
+    .banner h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    .btn {
+        font-size: .8rem;
+    }
+    .modal-container {
+        width: 70%;
+        height: 140px;
+    }
+    .modal-container h3 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+}
